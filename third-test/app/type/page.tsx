@@ -2,7 +2,7 @@ import WarframeCombobox from "@/components/WarframeCombobox";
 
 async function getWarframes() {
   const res: any = await fetch(
-    "https://api.warframestat.us/warframes/?only=sex,name,health,shield,releaseDate,marketCost,isPrime,productCategory,name"
+    "https://api.warframestat.us/warframes/?only=sex,name,health,shield,releaseDate,marketCost,isPrime,productCategory,name,wikiaThumbnail"
   );
   return res.json();
 }
