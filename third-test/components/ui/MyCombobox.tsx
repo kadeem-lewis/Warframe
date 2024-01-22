@@ -41,7 +41,9 @@ export function MyComboBox<T extends object>({
       {description && <Text slot="description">{description}</Text>}
       <FieldError>{errorMessage}</FieldError>
       <Popover>
-        <ListBox items={items}>{children}</ListBox>
+        <ListBox items={items} className="overflow-auto">
+          {children}
+        </ListBox>
       </Popover>
     </ComboBox>
   );
