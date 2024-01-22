@@ -1,7 +1,10 @@
+import WarframeCombobox from "@/components/WarframeCombobox";
 import Image from "next/image";
 
 async function getWarframes() {
-  const res: any = await fetch("https://api.warframestat.us/warframes");
+  const res: any = await fetch(
+    "https://api.warframestat.us/warframes/?only=sex,name,health,shield,releaseDate,marketCost"
+  );
   return res.json();
 }
 
@@ -30,6 +33,7 @@ export default async function Home() {
           <div>{warframe.marketCost}</div>
         </div>
       ))}
+      <WarframeCombobox warframes={warframes} />
     </main>
   );
 }
